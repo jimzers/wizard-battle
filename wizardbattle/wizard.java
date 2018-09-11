@@ -5,18 +5,27 @@
  * @author (your name)
  * @version (a version number or a date)
  */
+import java.util.*;
 public class wizard
 {
     // instance variables - replace the example below with your own
-    private int x;
+    String name;
+    int health;
+    int mana; 
+    ArrayList<String> spells;
+    
 
     /**
      * Constructor for objects of class wizard
      */
-    public wizard()
+    //have spells array for parameter
+    
+    public wizard(String namee, int healthh, int manaa)
     {
         // initialise instance variables
-        x = 0;
+        name = namee;
+        health = healthh;
+        mana = manaa;
     }
 
     /**
@@ -25,9 +34,9 @@ public class wizard
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public int sampleMethod(int y)
+    public void printwizards()    
     {
         // put your code here
-        return x + y;
+        
     }
 }
