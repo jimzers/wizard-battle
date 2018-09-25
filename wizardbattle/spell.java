@@ -8,15 +8,29 @@
 public class spell
 {
     // instance variables - replace the example below with your own
-    private int x;
+    public double damage = 0;
+    public double success_rate = 1;                                                                                            
+    double training_time = 1;
+    double duration = 0;
+    double damping_factor = 1;
+    String type;
+    String countertype;
+    
+    // name, likelihood of success, damage, counter spell (opt), training time
+    // duration, damping factor between 1 and 0
 
     /**
      * Constructor for objects of class spell
      */
-    public spell()
+    public spell(double dmg, double suc, double train_time,  
+    double durat, double damp)
     {
         // initialise instance variables
-        x = 0;
+        damage = dmg;
+        success_rate = suc;
+        training_time = train_time;
+        duration = durat;
+        damping_factor = damp;
     }
 
     /**

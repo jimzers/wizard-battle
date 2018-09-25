@@ -16,7 +16,7 @@ public class game
         boolean cont = true;
         while(cont) {
             String response = JOptionPane.showInputDialog("Press 'a' to add a player, " +
-            "or press any key to quit."
+            "or press any key to quit.");
             if(response.equals("a")){
                 //lmao add a  player
             } else {
