@@ -33,6 +33,40 @@ public class spell
         damping_factor = damp;
     }
 
+    public double getDamage() {
+        return damage;
+    }
+    public double getSucc(){
+        return success_rate;
+    }
+    public double getTrain()
+    {
+        return train_time;
+    }
+
+    public double getDuration() {
+        return duration;
+    }
+    public double getDamp(){
+        return damping_factor;
+    }
+    public double setDamage(double dmg){
+        damage = dmg;
+    }
+    public double setSucc(double suc){
+        success_rate = suc;
+    }
+    public double setTrain(double train){
+        training_time = train;
+    }
+    public double setDuration(double dura){
+        duration = dura;
+    }
+    public double setDamp(double damp){
+        damping_factor = damp;
+    }
+
+
     /**
      * An example of a method - replace this comment with your own
      *
