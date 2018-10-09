@@ -7,12 +7,15 @@
  */
 public class spell {
     // instance variables - replace the example below with your own
-    public double low_damage = 0;
-    public double high_damage = 0;
-    public double success_rate = 1;
+
+    double low_damage = 0;
+    double high_damage = 0;
+    double success_rate = 1;
     double training_time = 1;
     double duration = 0;
     double damping_factor = 1;
+    double length = 1;
+    String name;
     String type;
     String countertype;
     String description;
@@ -24,7 +27,7 @@ public class spell {
      * Constructor for objects of class spell
      */
     public spell(double low_dmg, double high_dmg, double suc, double train_time,
-                 double durat, double damp) {
+                 double durat, double damp, double length, String name, String type, String countertype, String description) {
         // initialise instance variables
         low_damage = low_dmg;
         high_damage = high_dmg;
@@ -32,7 +35,10 @@ public class spell {
         training_time = train_time;
         duration = durat;
         damping_factor = damp;
-        description = "this is a default spell"
+        name = "default";
+        description = "this is a default spell";
+        type = "Normal";
+        countertype = "Christianity";
 
     }
 
@@ -59,29 +65,69 @@ public class spell {
         return damping_factor;
     }
 
-    public double setLow_Damage(double dmg) {
-        damage = dmg;
+    public String getName(){
+        return name;
     }
 
-    public double setSucc(double suc) {
+    public String getDescription(){
+        return description;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getCountertype(){
+        return countertype;
+    }
+
+    public void setLow_Damage(double low_dmg) {
+        low_damage = low_dmg;
+    }
+
+    public void setHigh_Damage(double high_dmg) {
+        high_damage = high_dmg;
+    }
+
+    public void setSuccess_rate(double suc) {
         success_rate = suc;
     }
 
-    public double setTrain(double train) {
+    public void setTraining_time(double train) {
         training_time = train;
     }
 
-    public double setDuration(double dura) {
+    public void setDuration(double dura) {
         duration = dura;
     }
 
-    public double setDamp(double damp) {
+    public void setDamping_factor(double damp) {
         damping_factor = damp;
     }
-    public class batter extends spell(7, 8, 99.9, 1,){
 
+    public void setName(String nme){
+        name = nme;
     }
 
+    public void setDescription(String descr){
+        description = descr;
+    }
+
+    public void setType(String tpe){
+        type = tpe;
+    }
+
+    public void setCountertype(String countertpe){
+        countertype = countertpe;
+    }
+
+
+
+/*
+    public class batter extends spell(7, 8, 99, 1, 1, 1.){
+
+    }
+*/
     /**
      * An example of a method - replace this comment with your own
      *
