@@ -1,42 +1,29 @@
-
-/**
- * Write a description of class wizard here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 import java.util.*;
-public class wizard
+public class Wizard
 {
     // instance variables - replace the example below with your own
     String name;
-    int health;
-    int mana; 
-    ArrayList<String> spells;
-    
+    double health;
+    ArrayList<Spell> spells;
 
     /**
-     * Constructor for objects of class wizard
+     * Constructor for objects of class Wizard
      */
-    //have spells array for parameter
-    
-    public wizard(String namee, int healthh, int manaa)
+    public Wizard(String n)
     {
         // initialise instance variables
-        name = namee;
-        health = healthh;
-        mana = manaa;
+        name = n;
+        health = 100.; 
+        spells = new ArrayList<Spell>();
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public void printwizards()    
+    public void addSpell(Spell someSpell)
     {
-        // put your code here
-        
+        spells.add(someSpell);
+    }
+    
+    public void printSpells()
+    {
+        //print the roster summary for the team
+        System.out.println("Spells");
     }
 }

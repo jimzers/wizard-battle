@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class spell {
+public class Spell {
     // instance variables - replace the example below with your own
 
     double low_damage = 0;
@@ -26,7 +26,7 @@ public class spell {
     /**
      * Constructor for objects of class spell
      */
-    public spell(double low_dmg, double high_dmg, double suc, double train_time,
+    public Spell(double low_dmg, double high_dmg, double suc, double train_time,
                  double durat, double damp, double length, String name, String type, String countertype, String description) {
         // initialise instance variables
         low_damage = low_dmg;
