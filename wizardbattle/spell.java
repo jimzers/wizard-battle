@@ -5,76 +5,90 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class spell
-{
+public class spell {
     // instance variables - replace the example below with your own
-    public double damage = 0;
-    public double success_rate = 1;                                                                                            
+    public double low_damage = 0;
+    public double high_damage = 0;
+    public double success_rate = 1;
     double training_time = 1;
     double duration = 0;
     double damping_factor = 1;
     String type;
     String countertype;
-    
+    String description;
+
     // name, likelihood of success, damage, counter spell (opt), training time
     // duration, damping factor between 1 and 0
 
     /**
      * Constructor for objects of class spell
      */
-    public spell(double dmg, double suc, double train_time,  
-    double durat, double damp)
-    {
+    public spell(double low_dmg, double high_dmg, double suc, double train_time,
+                 double durat, double damp) {
         // initialise instance variables
-        damage = dmg;
+        low_damage = low_dmg;
+        high_damage = high_dmg;
         success_rate = suc;
         training_time = train_time;
         duration = durat;
         damping_factor = damp;
+        description = "this is a default spell"
+
     }
 
-    public double getDamage() {
-        return damage;
+    public double getLow_damage() {
+        return low_damage;
     }
-    public double getSucc(){
+    public double getHigh_damage() {
+        return high_damage;
+    }
+
+    public double getSuccess_rate() {
         return success_rate;
     }
-    public double getTrain()
-    {
-        return train_time;
+
+    public double getTraining_time() {
+        return training_time;
     }
 
     public double getDuration() {
         return duration;
     }
-    public double getDamp(){
+
+    public double getDamping_factor() {
         return damping_factor;
     }
-    public double setDamage(double dmg){
+
+    public double setLow_Damage(double dmg) {
         damage = dmg;
     }
-    public double setSucc(double suc){
+
+    public double setSucc(double suc) {
         success_rate = suc;
     }
-    public double setTrain(double train){
+
+    public double setTrain(double train) {
         training_time = train;
     }
-    public double setDuration(double dura){
+
+    public double setDuration(double dura) {
         duration = dura;
     }
-    public double setDamp(double damp){
+
+    public double setDamp(double damp) {
         damping_factor = damp;
     }
+    public class batter extends spell(7, 8, 99.9, 1,){
 
+    }
 
     /**
      * An example of a method - replace this comment with your own
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @param y a sample parameter for a method
+     * @return the sum of x and y
      */
-    public int sampleMethod(int y)
-    {
+    public int sampleMethod(int y) {
         // put your code here
         return x + y;
     }
