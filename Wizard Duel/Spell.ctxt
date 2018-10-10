@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Spell
+comment0.text=\n\ Write\ a\ description\ of\ class\ spell\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=n\ a\ d\ t\ du\ da
+comment1.target=Spell(java.lang.String,\ double,\ double,\ double,\ double,\ double)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ spell\n
+comment2.params=
+comment2.target=double\ getAttackRating()
+comment3.params=
+comment3.target=java.lang.String\ getName()
+comment4.params=
+comment4.target=double\ getTraining()
+comment5.params=
+comment5.target=double\ getDamage()
+numComments=6

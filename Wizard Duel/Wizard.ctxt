@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Wizard
+comment1.params=n
+comment1.target=Wizard(java.lang.String)
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Wizard\n
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=
+comment3.target=void\ printSpells()
+comment4.params=
+comment4.target=java.util.ArrayList\ getSpellbook()
+comment5.params=someSpell
+comment5.target=void\ addSpell(Spell)
+comment6.params=
+comment6.target=java.lang.Double\ getHealth()
+comment7.params=someSpell
+comment7.target=void\ damage(Spell)
+numComments=8
