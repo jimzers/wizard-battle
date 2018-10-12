@@ -1,4 +1,5 @@
 import java.util.*;
+import java.lang.Math;
 public class Wizard
 {
     // instance variables - replace the example below with your own
@@ -16,14 +17,20 @@ public class Wizard
         health = 100.; 
         spells = new ArrayList<Spell>();
     }
-    public void addSpell(Spell someSpell)
+    public String getName()
     {
-        spells.add(someSpell);
+        return name;
     }
     
-    public void printSpells()
+    public Double getHealth() 
+    {
+        return health;
+    }
+    
+    public void damage(Spell someSpell)
     {
         //print the roster summary for the team
-        System.out.println("Spells");
+        Random r = new Random();
+        health = health - ((r.nextInt(10)+1) * ((someSpell.getHigh_damage() - someSpell.getLow_damage())/10) + someSpell.getLow_damage());
     }
 }
