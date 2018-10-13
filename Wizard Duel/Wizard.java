@@ -25,7 +25,7 @@ public class Wizard
     
     public void printSpells() {
         for (int i = 0; i < Spellbook.size(); i++) {
-            System.out.println(Integer.toString(i+1) + ". " + (Spellbook.get(i)).getName() + " - " + Double.toString((Spellbook.get(i)).getDamage()));
+            System.out.println(Integer.toString(i+1) + ". " + (Spellbook.get(i)).getName() + " - " + Double.toString((Spellbook.get(i)).getLowDamage()) + "-" + Double.toString((Spellbook.get(i)).getHighDamage()));
         }
     }
     
@@ -45,13 +45,22 @@ public class Wizard
     
     public void damage(Spell someSpell)
     {
-        Random r = new Random();
-        double attack = someSpell.getAttackRating();
-        if (attack >= ((r.nextInt(10)+1) * 10)) {
-            JOptionPane.showMessageDialog(null, "Your attack was a success!!!");
-            health = health - someSpell.getDamage();
-        } else {
-            JOptionPane.showMessageDialog(null, "Your attack missed!!!");
+        if (someSpell.getSpell_Running()) {
+            Random r = new Random();
+            double attack = someSpell.getAttackRating();
+            if (attack >= ((r.nextInt(10) + 1) * 10)) {
+                JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " was a success!!!");
+                double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10);
+                double damp_mod = Math.pow(someSpell.getDamping_factor(), (someSpell.getDuration() - someSpell.getTurns()));
+                double dmgcalc = randDmg * damp_mod;
+                health = health - dmgcalc;
+            } else {
+                JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName()+ " missed!!!");
+            }
+            someSpell.setTurns(someSpell.getTurns()-1.0);
+            if (someSpell.getTurns() == 0){
+                someSpell.setRunningFalse();
+            }
         }
     }
 }

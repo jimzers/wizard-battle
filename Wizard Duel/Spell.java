@@ -9,26 +9,36 @@ public class Spell {
 
     String name;
     double attack_rating;
-    double damage_rating;
+    double low_damage_rating;
+    double high_damage_rating;
     double training_time;
-    double duration;
+    public final double duration;
     double damping_factor;
+    double turns;
+    boolean spell_running;
     // name, likelihood of success, damage, counter spell (opt), training time
     // duration, damping factor between 1 and 0
 
     /**
      * Constructor for objects of class spell
      */
-    public Spell(String n, double a, double d, double t, double du, double da) {
+    public Spell(String n, double a, double ld, double hd, double t, double du, double da) {
         name = n;
         attack_rating = a;
-        damage_rating = d;
+        low_damage_rating = ld;
+        high_damage_rating = hd;
         training_time = t;
         duration = du;
-        damping_factor = da; 
+        damping_factor = da;
+        turns = this.duration;
+        spell_running = false;
     }
-    
-    public double getAttackRating() { 
+
+    public double getTurns() {
+        return turns;
+    }
+
+    public double getAttackRating() {
         return attack_rating; 
     }
     
@@ -40,9 +50,35 @@ public class Spell {
         return training_time;
     }
     
-    public double getDamage() {
-        return damage_rating; 
+    public double getLowDamage() {
+        return low_damage_rating; 
+    }
+    
+    public double getHighDamage(){
+        return high_damage_rating;
+    }
+    public double getDamping_factor(){
+        return damping_factor;
+    }
+    public double getDuration(){
+        return duration;
+    }
+    public double getDamageDifference(){
+        return high_damage_rating - low_damage_rating;
+    }
+    public boolean getSpell_Running(){
+        return spell_running;
     }
 
-   
+    public void setTurns(double turns) {
+        this.turns = turns;
+    }
+    public void setRunningTrue(){
+        this.spell_running = true;
+    }
+    public void setRunningFalse() {
+        this.spell_running = false;
+    }
 }
+    
+    

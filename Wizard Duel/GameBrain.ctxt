@@ -2,7 +2,7 @@
 comment0.target=GameBrain
 comment1.params=one\ two
 comment1.target=GameBrain(Wizard,\ Wizard)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ GameBrain\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameBrain\r\n
 comment2.params=one\ two
 comment2.target=boolean\ duel(Wizard,\ Wizard)
 comment3.params=
