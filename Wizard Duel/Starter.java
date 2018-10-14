@@ -38,8 +38,20 @@ public class Starter
 
         boolean selectphase = true;
         boolean spellexists = false;
+        int number;
         while (selectphase) {
-            int number = Integer.parseInt(JOptionPane.showInputDialog("You have " + Double.toString(days) + " days. Select what spell you want to learn by number.")) - 1;
+            // need to have while loop that checks to see if selected spell is under the allowed days
+            while(true){
+                number = Integer.parseInt(JOptionPane.showInputDialog("You have "
+                        + Double.toString(days) + " days. Select what spell you want to learn by number.")) - 1;
+                if(spells.get(number).getTraining() > days){
+                    JOptionPane.showMessageDialog(null, "there's not enough time for spell "
+                            + spells.get(number).getName() + "... too bad");
+                } else {
+                    break;
+                }
+            }
+
             days = days - (spells.get(number)).getTraining();
             // adds corresponding "main spellbook" index number to track1's integer array
             track1.add(number);
@@ -70,7 +82,16 @@ public class Starter
         selectphase = true;
         spellexists = false;
         while (selectphase) {
-            int number = Integer.parseInt(JOptionPane.showInputDialog("You have " + Double.toString(days) + " days. Select what spell you want to learn by number.")) - 1;
+            while(true){
+                number = Integer.parseInt(JOptionPane.showInputDialog("You have "
+                        + Double.toString(days) + " days. Select what spell you want to learn by number.")) - 1;
+                if(spells.get(number).getTraining() > days){
+                    JOptionPane.showMessageDialog(null, "there's not enough time for spell "
+                            + spells.get(number).getName() + "... too bad");
+                } else {
+                    break;
+                }
+            }
             days = days - (spells.get(number)).getTraining();
             // adds corresponding "main spellbook" index number to track1's integer array
             track2.add(number);
@@ -82,7 +103,7 @@ public class Starter
                 }
             }
             if (!spellexists){
-                JOptionPane.showMessageDialog(null, "lmaO THERE ain't no spells left");
+                JOptionPane.showMessageDialog(null, "lmaO THERE ain't no more time left");
                 break;
             }
             // iterate thru all the spells in spell list to see if they are under the today days left, if none match that condition it sets the phase to false

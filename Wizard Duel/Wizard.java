@@ -50,9 +50,9 @@ public class Wizard
             double attack = someSpell.getAttackRating();
             if (attack >= ((r.nextInt(10) + 1) * 10)) {
 
-                double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10);
+                double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10) + someSpell.getLowDamage();
                 double damp_mod = Math.pow(someSpell.getDamping_factor(), (someSpell.getDuration() - someSpell.getTurns()));
-                double dmgcalc = randDmg * damp_mod;
+                double dmgcalc = randDmg * damp_mod///;
                 health = health - dmgcalc;
                 JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " was a success!!!" + "It did " + dmgcalc + " damage.");
             } else {
