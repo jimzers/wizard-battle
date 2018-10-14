@@ -60,21 +60,38 @@ public class Starter
             System.out.println((spells.get(track1.get(i))).getName());
             // here, we need to add some sort of cloning mechanism because it's gotta be a separate instance
             Spell clonedspell = (Spell) spells.get(track1.get(i)).clone();
-            //playerone.addSpell(spells.get(track1.get(i)));
+            playerone.addSpell(clonedspell);
         }
         days = 10;
         String secondwizard = JOptionPane.showInputDialog("Please enter the name for your second wizard.");
 
         playertwo = new Wizard(secondwizard);
         JOptionPane.showMessageDialog(null, "Welcome " + secondwizard + "!");
-        while (days != 0.0) {
+        selectphase = true;
+        spellexists = false;
+        while (selectphase) {
             int number = Integer.parseInt(JOptionPane.showInputDialog("You have " + Double.toString(days) + " days. Select what spell you want to learn by number.")) - 1;
             days = days - (spells.get(number)).getTraining();
+            // adds corresponding "main spellbook" index number to track1's integer array
             track2.add(number);
+            spellexists = false;
+            for (int k = 0; k < spells.size(); k++){
+                if (spells.get(k).getTraining() <= days){
+                    spellexists = true;
+                    break;
+                }
+            }
+            if (!spellexists){
+                JOptionPane.showMessageDialog(null, "lmaO THERE ain't no spells left");
+                break;
+            }
+            // iterate thru all the spells in spell list to see if they are under the today days left, if none match that condition it sets the phase to false
         }
         for (int i = 0; i < track2.size(); i++) {
             System.out.println((spells.get(track2.get(i))).getName());
-            playertwo.addSpell(spells.get(track2.get(i)));
+            // here, we need to add some sort of cloning mechanism because it's gotta be a separate instance
+            Spell clonedspell = (Spell) spells.get(track2.get(i)).clone();
+            playertwo.addSpell(clonedspell);
         }
         GameBrain gB = new GameBrain(playerone, playertwo);
         while (gB.duel(playerone, playertwo) == true) {
@@ -102,7 +119,12 @@ public class Starter
                 System.out.println("Health: " + Double.toString(playertwo.getHealth()));
                 playertwo.printSpells();
                 int spell2 = Integer.parseInt(JOptionPane.showInputDialog("Look at terminal for your available spells and damage. Select spell by number for your turn.")) - 1;
-                playerone.damage((playertwo.getSpellbook()).get(spell2));
+                playertwo.getSpellbook().get(spell2).setRunningTrue();
+                for(int k = 0; k < playertwo.getSpellbook().size(); k++){
+                    if(playertwo.getSpellbook().get(k).getSpell_Running()){
+                        playerone.damage((playertwo.getSpellbook()).get(k));
+                    }
+                }
             }
         }
         System.out.println("Game Over!!!! " + gB.getWinner() + " won!!!"); 
