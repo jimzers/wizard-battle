@@ -6,12 +6,11 @@
  */
 public class Spell {
     // instance variables - replace the example below with your own
-
     String name;
     double attack_rating;
     double low_damage_rating;
     double high_damage_rating;
-    double training_time;
+    public final double training_time;
     public final double duration;
     double damping_factor;
     double turns;
@@ -80,6 +79,19 @@ public class Spell {
     public void setRunningFalse() {
         this.spell_running = false;
     }
+    // deep copy implementation
+    @Override
+    public Object clone() {
+        try {
+            return (Spell) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return new Spell(this.name, this.attack_rating, this.low_damage_rating, this.high_damage_rating,
+                    this.training_time, this.duration, this.damping_factor);
+        }
+    }
+
+
+
 }
     
     

@@ -59,7 +59,8 @@ public class Starter
         for (int i = 0; i < track1.size(); i++) {
             System.out.println((spells.get(track1.get(i))).getName());
             // here, we need to add some sort of cloning mechanism because it's gotta be a separate instance
-            playerone.addSpell(spells.get(track1.get(i)));
+            Spell clonedspell = (Spell) spells.get(track1.get(i)).clone();
+            //playerone.addSpell(spells.get(track1.get(i)));
         }
         days = 10;
         String secondwizard = JOptionPane.showInputDialog("Please enter the name for your second wizard.");
