@@ -75,6 +75,7 @@ public class Spell {
     }
     public void setRunningTrue(){
         this.spell_running = true;
+        this.turns = this.duration;
     }
     public void setRunningFalse() {
         this.spell_running = false;
