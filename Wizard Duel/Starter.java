@@ -27,10 +27,26 @@ public class Starter
         spells.add(new Spell("Solar Beam", 100, 20, 25, 5, 1, 1));
         spells.add(new Spell("tiger mom", 25, 90, 100, 5, 1, 1));
         spells.add(new Spell("poison fart", 50, 15, 20, 2, 3, 0.5));
+        
+        String answer = JOptionPane.showInputDialog("Do you want to add more spells than our current four");
+        while (answer.equals("yes")) {
+           // Spell(String n, double a, double ld, double hd, double t, double du, double da)
+           String n = JOptionPane.showInputDialog("What is the name of your spell?");
+           Double a = Double.parseDouble(JOptionPane.showInputDialog("What is the attack rating?"));
+           Double ld = Double.parseDouble(JOptionPane.showInputDialog("What is the low damage rating?"));
+           Double hd = Double.parseDouble(JOptionPane.showInputDialog("What is the high damage rating?"));
+           Double ti = Double.parseDouble(JOptionPane.showInputDialog("How long does it take to learn your spell?"));
+           Double du = Double.parseDouble(JOptionPane.showInputDialog("What is the duration?"));
+           Double da = Double.parseDouble(JOptionPane.showInputDialog("What is the damping factor?"));
+           spells.add(new Spell(n, a, ld, hd, ti, du, da));
+           answer = JOptionPane.showInputDialog("Do you still want to add more spells?");
+        }
+       
         for (int i = 0; i < spells.size(); i++) {
             System.out.println(Integer.toString(i+1) + ". " + (spells.get(i)).getName() + " - " + Double.toString((spells.get(i)).getTraining()
             ) + " days");
         }
+        
         JOptionPane.showMessageDialog(null, "Look at Terminal Screen for spells and how many days it takes to learn each spell.");
         String firstwizard = JOptionPane.showInputDialog("Please enter the name for your first wizard.");
         playerone = new Wizard(firstwizard);
