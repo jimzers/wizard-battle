@@ -15,7 +15,7 @@ public class Wizard
     {
         // initialise instance variables
         name = n;
-        health = 100.; 
+        health = 100.;
         Spellbook = new ArrayList<Spell>();
     }
     // accessor and setter methods
@@ -24,7 +24,7 @@ public class Wizard
     {
         return name;
     }
-    
+
     public void printSpells() {
         for (int i = 0; i < Spellbook.size(); i++) {
             System.out.println(Integer.toString(i+1) + ". " + (Spellbook.get(i)).getName() + " - " + Double.toString((Spellbook.get(i)).getLowDamage()) + "-" + Double.toString((Spellbook.get(i)).getHighDamage()));
@@ -34,42 +34,32 @@ public class Wizard
     public ArrayList<Spell> getSpellbook() {
         return Spellbook;
     }
-    
+
     public void addSpell(Spell someSpell)
     {
         Spellbook.add(someSpell);
     }
 
-    public Double getHealth() 
+    public Double getHealth()
     {
         return health;
     }
-    
+
     public void damage(Spell someSpell)
     {
         // only run if the spell's running check returns true
         if (someSpell.getSpell_Running()) {
             Random r = new Random();
             double attack = someSpell.getAttackRating();
-
-            if (someSpell.getDuration() != someSpell.getTurns()){
-                // calculating damping damage
-                double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10) + someSpell.getLowDamage();
-                double damp_mod = Math.pow(someSpell.getDamping_factor(), (someSpell.getDuration() - someSpell.getTurns()));
-                double dmgcalc = randDmg * damp_mod;
-                health = health - dmgcalc;
-                JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " had an aftereffect of " + dmgcalc + " damage.");
-            }
             // random chance calculation to see if attack hits
             if (attack >= ((r.nextInt(10) + 1) * 10)) {
                 // checks if duration has exceeded past first turn, if not then it runs regular damage code
-                if (someSpell.getDuration != someSpell.getTurns){
-                    // calculating 1st turn damage
-                    double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10) + someSpell.getLowDamage();
-                    double dmgcalc = randDmg;
-                    health = health - dmgcalc;
-                    JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " was a success!!!" + "It did " + dmgcalc + " damage.");
-                }
+                double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10) + someSpell.getLowDamage();
+                // calculating damping damage
+                double damp_mod = Math.pow(someSpell.getDamping_factor(), (someSpell.getDuration() - someSpell.getTurns()));
+                double dmgcalc = randDmg * damp_mod;
+                health = health - dmgcalc;
+                JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " was a success!!!" + " It did " + dmgcalc + " damage.");
             } else {
                 // attack misses
                 JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName()+ " missed!!!");
