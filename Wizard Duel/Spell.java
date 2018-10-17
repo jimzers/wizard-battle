@@ -29,9 +29,11 @@ public class Spell {
         training_time = t;
         duration = du;
         damping_factor = da;
+        // default turn setting is duration setting, and spell_running check is false
         turns = this.duration;
         spell_running = false;
     }
+    // accessor and setter methods
 
     public double getTurns() {
         return turns;
@@ -73,13 +75,14 @@ public class Spell {
         this.turns = turns;
     }
     public void setRunningTrue(){
+        // when spell set to true it's turn counter resets
         this.spell_running = true;
         this.turns = this.duration;
     }
     public void setRunningFalse() {
         this.spell_running = false;
     }
-    // deep copy implementation
+    // deep copy implementation so that each spell object has it's own unique turn counter
     @Override
     public Object clone() {
         try {
