@@ -9,6 +9,8 @@ public class GameBrain
     /**
      * Constructor for objects of class GameBrain
      */
+    
+    // constructor for class needing two wizard external parameters 
     public GameBrain(Wizard one, Wizard two)
     {
         // initialise instance variables
@@ -16,9 +18,10 @@ public class GameBrain
         two = two;
     }
     
+    // this method uses if then conditions to determine whether the game is over and assigns a String value to winner 
     public boolean duel(Wizard one, Wizard two) {
         if (two.getHealth() <= 0.0 || one.getHealth() <= 0.0) {
-            if (two.getHealth() == 0.0) {
+            if (two.getHealth() <= 0.0) {
                 winner = one.getName();
             } else {
                 winner = two.getName();
@@ -28,6 +31,7 @@ public class GameBrain
         return true; 
     }
     
+    // this method returns the winner of the game 
     public String getWinner() {
         return winner; 
     }
