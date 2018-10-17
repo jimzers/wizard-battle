@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c92c4879-b1aa-4092-8930-439cc80b0b47" name="Default Changelist" comment="" />
+    <list default="true" id="c92c4879-b1aa-4092-8930-439cc80b0b47" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Wizard.java" beforeDir="false" afterPath="$PROJECT_DIR$/Wizard.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,12 +45,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="27" />
-          <entry key="java" value="4082" />
+          <entry key="java" value="4140" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="4082" />
+          <entry key="JAVA" value="4140" />
           <entry key="PLAIN_TEXT" value="27" />
         </counts>
       </usages-collector>
@@ -116,8 +118,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Wizard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+            <state relative-caret-position="327">
+              <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -163,8 +165,8 @@
         <option value="$PROJECT_DIR$/Starter.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/package.bluej" />
-        <option value="$PROJECT_DIR$/Wizard.java" />
         <option value="$PROJECT_DIR$/Spell.java" />
+        <option value="$PROJECT_DIR$/Wizard.java" />
       </list>
     </option>
   </component>
@@ -205,7 +207,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539757298025" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539757764793" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -293,7 +295,7 @@
       <workItem from="1539231413543" duration="1521000" />
       <workItem from="1539357354777" duration="3566000" />
       <workItem from="1539364835863" duration="19459000" />
-      <workItem from="1539750478436" duration="5118000" />
+      <workItem from="1539750478436" duration="5622000" />
     </task>
     <servers />
   </component>
@@ -306,7 +308,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26566000" />
+    <option name="totallyTimeSpent" value="27070000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,8 +428,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Wizard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="68" column="17" lean-forward="true" selection-start-line="68" selection-start-column="17" selection-end-line="68" selection-end-column="17" />
+        <state relative-caret-position="327">
+          <caret line="62" column="12" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
