@@ -58,6 +58,7 @@ public class Wizard
                     // calculating 1st turn damage
                     double randDmg = (someSpell.getDamageDifference() / 10) * (Math.random() * 10) + someSpell.getLowDamage();
                     double dmgcalc = randDmg;
+                    health = health - dmgcalc;
                     JOptionPane.showMessageDialog(null, "Your attack " + someSpell.getName() + " was a success!!!" + "It did " + dmgcalc + " damage.");
                 } else {
                     // calculating damping damage
