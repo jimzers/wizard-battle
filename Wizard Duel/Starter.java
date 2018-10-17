@@ -177,11 +177,4 @@ public class Starter
         System.out.println("Game Over!!!! " + gB.getWinner() + " won!!!"); 
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-
 }
